@@ -27,6 +27,8 @@ def main():
         'Accept': 'application/vnd.github.v3+json'
     }
 
+    print("Fetching pull request data...with credentials::", token, repo, pr_number)
+
     pr_url = f'https://api.github.com/repos/{repo}/pulls/{pr_number}'
     response = requests.get(pr_url, headers=headers)
 
