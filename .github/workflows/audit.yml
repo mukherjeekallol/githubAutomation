@@ -23,4 +23,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run audit script
-        run: python audit/create_audit.py ${{ github.actor }} ${{ github.event.pull_request.number }}
+        run: python github-audit-workflow/audit/create_audit.py ${{ github.actor }} ${{ github.event.pull_request.number }}
