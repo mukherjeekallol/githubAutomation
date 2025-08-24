@@ -1,7 +1,7 @@
 import os
 import json
 import requests
-
+ 
 def create_audit_document(pr_data):
     audit_info = {
         "pull_request_id": pr_data['id'],
@@ -14,6 +14,11 @@ def create_audit_document(pr_data):
     print("Audit Document:")
     print(json.dumps(audit_info, indent=4))
 
+    # audit_file_path = os.path.join(os.getcwd(), 'audit', 'audit_document.json')
+    
+    # with open(audit_file_path, 'w') as audit_file:
+    # json.dumps(audit_info, indent=4)
+ 
 def main():
     # GitHub API token and repository details should be set as environment variables
     token = os.getenv('GITHUB_TOKEN')
