@@ -1,7 +1,7 @@
 import os
 import json
 import requests
-
+ 
 def create_audit_document(pr_data):
     audit_info = {
         "pull_request_id": pr_data['id'],
