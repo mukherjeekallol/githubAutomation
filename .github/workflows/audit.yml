@@ -23,4 +23,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run audit script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}          
         run: python github-audit-workflow/audit/create_audit.py ${{ github.actor }} ${{ github.event.pull_request.number }}
