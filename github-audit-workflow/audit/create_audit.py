@@ -15,7 +15,7 @@ def create_audit_document(pr_data):
     
     with open(audit_file_path, 'w') as audit_file:
         json.dump(audit_info, audit_file, indent=4)
-
+ 
 def main():
     # GitHub API token and repository details should be set as environment variables
     token = os.getenv('GITHUB_TOKEN')
